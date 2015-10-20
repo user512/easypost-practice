@@ -1,0 +1,103 @@
+<h1>Please input postage info</h1>
+
+<%= form_tag("/easyposts", method: "post") do %>
+  <%= label_tag(:recipient_name, "Recipient Name:") %>
+  <%= text_field_tag(:recipient_name) %>
+  <br>
+
+
+  <%= label_tag(:recipient_company, "Recipient Company:") %>
+  <%= text_field_tag(:recipient_company) %>
+  <br>
+
+
+  <%= label_tag(:recipient_street_1, "Recipient Street 1:") %>
+  <%= text_field_tag(:recipient_street_1) %>
+  <br>
+
+
+  <%= label_tag(:recipient_street_2, "Recipient Street 2:") %>
+  <%= text_field_tag(:recipient_street_2) %>
+  <br>
+
+
+  <%= label_tag(:recipient_city, "Recipient City:") %>
+  <%= text_field_tag(:recipient_city) %>
+  <br>
+
+
+  <%= label_tag(:recipient_state, "Recipient State:") %>
+  <%= text_field_tag(:recipient_state) %>
+  <br>
+
+
+  <%= label_tag(:recipient_zip, "Recipient Zip:") %>
+  <%= text_field_tag(:recipient_zip) %>
+  <br>
+
+  <br>
+  <br>
+
+  <%= label_tag(:sender_name, "Sender Name:") %>
+  <%= text_field_tag(:sender_name) %>
+  <br>
+
+
+  <%= label_tag(:sender_company, "Sender Company:") %>
+  <%= text_field_tag(:sender_company) %>
+  <br>
+
+
+  <%= label_tag(:sender_street_1, "Sender Street 1:") %>
+  <%= text_field_tag(:sender_street_1) %>
+  <br>
+
+
+  <%= label_tag(:sender_2, "Sender Street 2:") %>
+  <%= text_field_tag(:sender_street_2) %>
+  <br>
+
+
+  <%= label_tag(:sender_city, "Sender City:") %>
+  <%= text_field_tag(:sender_city) %>
+  <br>
+
+
+  <%= label_tag(:sender_state, "Sender State:") %>
+  <%= text_field_tag(:sender_state) %>
+  <br>
+
+
+  <%= label_tag(:sender_zip, "Sender Zip:") %>
+  <%= text_field_tag(:sender_zip) %>
+  <br>
+
+
+  <%= label_tag(:sender_phone, "Sender Phone:") %>
+  <%= text_field_tag(:sender_phone) %>
+  <br>
+  <br>
+
+
+  <%= label_tag(:parcel_length, "Parcel Length:") %>
+  <%= text_field_tag(:parcel_length) %>
+  <br>
+
+
+  <%= label_tag(:parcel_width, "Parcel Width:") %>
+  <%= text_field_tag(:parcel_width) %>
+  <br>
+
+
+  <%= label_tag(:parcel_height, "Parcel Height:") %>
+  <%= text_field_tag(:parcel_height) %>
+  <br>
+
+  <%= label_tag(:parcel_weight, "Parcel Weight:") %>
+  <%= text_field_tag(:parcel_weight) %>
+  <br>
+  <br>
+
+
+  <%= submit_tag("Print Postage") %>
+<% end %>
