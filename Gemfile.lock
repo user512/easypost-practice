@@ -41,6 +41,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (6.0.2)
+    client_side_validations (3.2.7)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -51,6 +52,10 @@ GEM
     debug_inspector (0.0.2)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     easypost (2.1.7)
       multi_json (>= 1.3.0)
       rest-client (~> 1.4)
@@ -157,6 +162,8 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  client_side_validations
+  dotenv-rails
   easypost (~> 2.1, >= 2.1.7)
   jbuilder (~> 2.0)
   jquery-rails

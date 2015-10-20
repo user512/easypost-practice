@@ -1,6 +1,6 @@
 class EasypostsController < ApplicationController
   require 'easypost'
-  EasyPost.api_key = 'YmZwrJGyVlOCLFnnV4Mq8Q'
+  EasyPost.api_key = ENV['EASYPOST_KEY']
 
   def create
 
@@ -35,20 +35,13 @@ begin
         }
         )
 
-
-
-
-
-
       shipment.buy(
         :rate => shipment.lowest_rate(carriers = ['USPS']))
 
-
-
-
     redirect_to shipment.postage_label.label_url
   rescue Exception
-    render 'Please input correct postage info'
+    flash.notice = "PLEASE INPUT CORRECT ADDRESS TO PRINT POSTAGE LABEL"
+    render template: "packages/new"
 
   end
   end
