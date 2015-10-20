@@ -4,7 +4,7 @@ class EasypostsController < ApplicationController
 
   def create
 
-
+begin
     shipment = EasyPost::Shipment.create(
     {
       to_address: {
@@ -37,15 +37,19 @@ class EasypostsController < ApplicationController
 
 
 
-    p "*" * 100
-
-    p shipment
-    p shipment.buy(
-      :rate => shipment.lowest_rate(carriers = ['USPS']))
 
 
 
-      redirect_to shipment.postage_label.label_url
+      shipment.buy(
+        :rate => shipment.lowest_rate(carriers = ['USPS']))
 
-    end
+
+
+
+    redirect_to shipment.postage_label.label_url
+  rescue Exception
+    render 'Please input correct postage info'
+
   end
+  end
+end
