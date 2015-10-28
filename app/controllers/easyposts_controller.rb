@@ -1,6 +1,6 @@
 class EasypostsController < ApplicationController
   require 'easypost'
-  EasyPost.api_key = "YmZwrJGyVlOCLFnnV4Mq8Q"
+  EasyPost.api_key = ENV["EASYPOST_KEY"]
 
   def create
 
