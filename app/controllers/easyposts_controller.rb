@@ -38,7 +38,7 @@ begin
       shipment.buy(
         :rate => shipment.lowest_rate(carriers = ['USPS']))
 
-    redirect_to shipment.postage_label.label_url
+    @postage_url = shipment.postage_label.label_url
   rescue Exception
     flash.notice = "PLEASE INPUT CORRECT ADDRESS TO PRINT POSTAGE LABEL"
     render template: "packages/new"

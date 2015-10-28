@@ -15,8 +15,8 @@
 <% end %>
 
 <div class="row">
-  <div class="medium-4 columns">
-    <%= form_tag("/easyposts", method: "post") do %>
+  <div class="medium-4 columns panel callout">
+    <%= form_tag("/easyposts", method: "post", id: :postageForm) do %>
     <%= label_tag(:recipient_name, "Recipient Name:") %>
     <%= text_field_tag(:recipient_name) %>
     <br>
@@ -52,7 +52,7 @@
     <br>
 
   </div>
-  <div class="medium-4 columns">
+  <div class="medium-4 columns panel">
     <%= label_tag(:sender_name, "Sender Name:") %>
     <%= text_field_tag(:sender_name) %>
     <br>
@@ -92,7 +92,7 @@
     <%= text_field_tag(:sender_phone) %>
   </div>
 
-  <div class="medium-4 columns">
+  <div class="medium-4 columns panel callout">
     <%= label_tag(:parcel_length, "Parcel Length:") %>
     <%= text_field_tag(:parcel_length) %>
     <br>
@@ -109,7 +109,9 @@
 
     <%= label_tag(:parcel_weight, "Parcel Weight:") %>
     <%= text_field_tag(:parcel_weight) %>
-    <%= submit_tag("Buy Postage", class: "button success", id: "buyPostage")%>
+    <div class="text-center">
+      <%= submit_tag("Buy Postage", class: "button success", id: "buyPostage")%>
+    </div>
   </div>
 
   <br>
