@@ -18,7 +18,7 @@
   <div class="medium-4 columns panel callout">
     <%= form_tag("/easyposts", method: "post") do %>
     <%= label_tag(:recipient_name, "Recipient Name:") %>
-    <%= text_field_tag(:recipient_name) %>
+    <%= text_field_tag :recipient_name, nil, required: true %>
     <br>
 
 
@@ -28,7 +28,7 @@
 
 
     <%= label_tag(:recipient_street_1, "Recipient Street 1:") %>
-    <%= text_field_tag(:recipient_street_1) %>
+    <%= text_field_tag :recipient_street_1, nil, required: true  %>
     <br>
 
 
@@ -38,23 +38,23 @@
 
 
     <%= label_tag(:recipient_city, "Recipient City:") %>
-    <%= text_field_tag(:recipient_city) %>
+    <%= text_field_tag :recipient_city, nil, required: true %>
     <br>
 
 
     <%= label_tag(:recipient_state, "Recipient State:") %>
-    <%= text_field_tag(:recipient_state) %>
+    <%= text_field_tag :recipient_state, nil, required: true %>
     <br>
 
 
     <%= label_tag(:recipient_zip, "Recipient Zip:") %>
-    <%= text_field_tag(:recipient_zip) %>
+    <%= number_field_tag :recipient_zip, nil, required: true, min: "10000", max: "99999" %>
     <br>
 
   </div>
   <div class="medium-4 columns panel">
     <%= label_tag(:sender_name, "Sender Name:") %>
-    <%= text_field_tag(:sender_name) %>
+    <%= text_field_tag :sender_name, nil, required: true %>
     <br>
 
 
@@ -64,7 +64,7 @@
 
 
     <%= label_tag(:sender_street_1, "Sender Street 1:") %>
-    <%= text_field_tag(:sender_street_1) %>
+    <%= text_field_tag :sender_street_1 , nil, required: true %>
     <br>
 
 
@@ -74,41 +74,41 @@
 
 
     <%= label_tag(:sender_city, "Sender City:") %>
-    <%= text_field_tag(:sender_city) %>
+    <%= text_field_tag :sender_city , nil, required: true %>
     <br>
 
 
     <%= label_tag(:sender_state, "Sender State:") %>
-    <%= text_field_tag(:sender_state) %>
+    <%= text_field_tag :sender_state , nil, required: true %>
     <br>
 
 
     <%= label_tag(:sender_zip, "Sender Zip:") %>
-    <%= text_field_tag(:sender_zip) %>
+    <%= number_field_tag :sender_zip , nil, required: true, min: "10000", max: "99999" %>
     <br>
 
 
     <%= label_tag(:sender_phone, "Sender Phone:") %>
-    <%= text_field_tag(:sender_phone) %>
+    <%= number_field_tag(:sender_phone) %>
   </div>
 
   <div class="medium-4 columns panel callout">
     <%= label_tag(:parcel_length, "Parcel Length:") %>
-    <%= text_field_tag(:parcel_length) %>
+    <%= number_field_tag :parcel_length , nil, required: true, max: "27" %>
     <br>
 
 
     <%= label_tag(:parcel_width, "Parcel Width:") %>
-    <%= text_field_tag(:parcel_width) %>
+    <%= number_field_tag :parcel_width , nil, required: true, max: "17" %>
     <br>
 
 
     <%= label_tag(:parcel_height, "Parcel Height:") %>
-    <%= text_field_tag(:parcel_height) %>
+    <%= number_field_tag :parcel_height , nil, required: true, max: "17" %>
     <br>
 
     <%= label_tag(:parcel_weight, "Parcel Weight:") %>
-    <%= text_field_tag(:parcel_weight) %>
+    <%= number_field_tag :parcel_weight , nil, required: true, max: "25" %>
     <div class="text-center">
       <%= submit_tag("Buy Postage", class: "button success")%>
   <% end %>
