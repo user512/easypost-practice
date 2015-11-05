@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'packages#index'
 
   resources :packages
+  get 'packages/show' => 'packages#show'
   resources :easyposts
 
   # Example of regular route:
