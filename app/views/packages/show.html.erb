@@ -1,5 +1,14 @@
+<div class='row'>
+  <div class="small-12 columns">
+    <div class="panel text-center">
+      <h1>Package History</h1>
+    </div>
+  </div>
+</div>
+
+<% @packages.each do |package| %>
 <div class="row">
-  <% @packages.each do |package| %>
+  <div class="medium-12 columns panel callout">
   To:
   <%= package.addresses.first.name %>
   <%= package.addresses.first.street1 %>
@@ -17,5 +26,6 @@
 
   <%= link_to "Postage Image", package.postage_label %><br>
   Tracking nunber: <%= package.tracking_number %>
-  <% end %>
+  </div>
 </div>
+<% end %>
