@@ -40,6 +40,7 @@ gem 'simple_form'
 
 gem 'foundation-rails'
 gem 'dotenv-rails'
+gem 'better_errors'
 
 
 group :development, :test do
