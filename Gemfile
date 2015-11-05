@@ -40,12 +40,12 @@ gem 'simple_form'
 
 gem 'foundation-rails'
 gem 'dotenv-rails'
-gem 'better_errors'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'better_errors'
 end
 
 group :development do
