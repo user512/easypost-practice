@@ -3,27 +3,5 @@
 <%= render 'shared/navbar' %>
 
 <% if @packages %>
-  <% @packages.each do |package| %>
-  <div class="row">
-    <div class="medium-12 columns panel callout">
-      To:
-      <%= package.addresses.first.name %>,
-      <%= package.addresses.first.street1 %>
-      <%= package.addresses.first.street2 %>,
-      <%= package.addresses.first.city %>,
-      <%= package.addresses.first.zip %><br>
-
-      From:
-      <%= package.addresses.last.name %>,
-      <%= package.addresses.last.street1 %>
-      <%= package.addresses.last.street2 %>,
-      <%= package.addresses.last.city %>,
-      <%= package.addresses.last.zip %><br>
-
-
-      <%= link_to "Reprint Postage Label", package.postage_label %><br>
-      Tracking nunber: <%= package.tracking_number %>
-    </div>
-  </div>
-  <% end %>
+  <%= render 'shared/package_history' %>
 <% end %>

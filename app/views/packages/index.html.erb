@@ -9,14 +9,5 @@
 </div>
 
 <% if @postage_label %>
-<div class="row">
-  <div class="small-6 text-center columns">
-    <%= image_tag @postage_label %>
-  </div>
-  <div class="small-6 text-center columns">
-      <form>
-        <input class="button" type="button" value="Print this page" onClick="window.print()">
-      </form>
-  </div>
-</div>
+  <%= render 'shared/postage_label' %>
 <% end %>
