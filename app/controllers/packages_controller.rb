@@ -8,19 +8,27 @@ class PackagesController < ApplicationController
   end
 
   def create
-      to_address = Address.create(to_address_params)
-      from_address = Address.create(from_address_params)
+    to_address = Address.create(to_address_params)
+    from_address = Address.create(from_address_params)
+
+    begin
       Easypost.create_easypost_parcel(to_address, from_address, parcel_params)
       @postage_label = Easypost.buy_cheapest_easypost_postage
       @tracking_number = Easypost.get_tracking_number
-      package = Package.create(postage_label: @postage_label, tracking_number: @tracking_number)
-      to_address.update(package_id: package.id)
-      from_address.update(package_id: package.id)
-      render template: "packages/index"
+    rescue Exception
+      flash.notice = "PLEASE INPUT CORRECT ADDRESS TO PRINT POSTAGE LABEL"
+      render template: "packages/new"
+      return
+    end
+
+    package = Package.create(postage_label: @postage_label, tracking_number: @tracking_number)
+    to_address.update(package_id: package.id)
+    from_address.update(package_id: package.id)
+    render template: "packages/index"
   end
 
   def show
-      @packages = Package.all
+    @packages = Package.all
   end
 
 
