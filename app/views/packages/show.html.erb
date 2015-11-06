@@ -1,10 +1,6 @@
-<div class='row'>
-  <div class="small-12 columns">
-    <div class="panel text-center">
-      <h1>Package History</h1>
-    </div>
-  </div>
-</div>
+<% content_for :title, "Package History" %>
+
+<%= render 'shared/navbar' %>
 
 <% if @packages %>
   <% @packages.each do |package| %>

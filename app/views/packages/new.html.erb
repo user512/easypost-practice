@@ -1,18 +1,6 @@
-<div class="row">
-  <div class="large-12 columns">
-    <div class="panel text-center">
-      <h1>Please input postage info</h1>
-    </div>
-  </div>
-</div>
-<% if flash[:notice] %>
-<div class="row">
-  <div class="panel callout radius">
-    <div class="notice" style="color: red"><%= flash[:notice] %></div>
-    <br>
-  </div>
-</div>
-<% end %>
+<% content_for :title, "New Shipment" %>
+
+<%= render 'shared/navbar' %>
 
 <div class="row">
   <div class="medium-4 columns panel callout">
