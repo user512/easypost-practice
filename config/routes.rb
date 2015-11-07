@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'packages#index'
 
-  resources :packages
   get 'packages/history' => 'packages#history'
+  resources :packages
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

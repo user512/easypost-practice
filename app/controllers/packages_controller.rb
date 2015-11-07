@@ -27,10 +27,12 @@ class PackagesController < ApplicationController
     render template: "packages/index"
   end
 
+  def show
+  end
+
   def history
     @packages = Package.all
   end
-
 
   private
   def to_address_params
