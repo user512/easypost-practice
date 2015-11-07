@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151105145326) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone"
+    t.string   "phone"
     t.integer  "package_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

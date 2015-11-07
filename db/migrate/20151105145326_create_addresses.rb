@@ -8,7 +8,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.integer :zip
-      t.integer :phone
+      t.string :phone
       t.references :package
 
       t.timestamps null: false

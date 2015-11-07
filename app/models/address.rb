@@ -1,9 +1,9 @@
 class Address < ActiveRecord::Base
   belongs_to :package
   has_one :package
+  before_validation :format_address
   validates :name, :street1, :city, :state, presence: true
   validates_inclusion_of :zip, :in => 10000..99999
-  before_validation :format_address
 
   def format_address
     self.name = self.name.titleize
