@@ -27,7 +27,7 @@ class PackagesController < ApplicationController
     render template: "packages/index"
   end
 
-  def show
+  def history
     @packages = Package.all
   end
 

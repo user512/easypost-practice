@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   root 'packages#index'
 
   resources :packages
-  get 'packages/show' => 'packages#show'
-  resources :easyposts
+  get 'packages/history' => 'packages#history'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
