@@ -7,6 +7,10 @@ class PackagesController < ApplicationController
   def new
   end
 
+  def history
+    @packages = Package.all
+  end
+
   def create
     to_address = Address.create(to_address_params)
     from_address = Address.create(from_address_params)
@@ -25,10 +29,6 @@ class PackagesController < ApplicationController
     to_address.update(package_id: package.id)
     from_address.update(package_id: package.id)
     render template: "packages/index"
-  end
-
-  def history
-    @packages = Package.all
   end
 
 
