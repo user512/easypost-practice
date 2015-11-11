@@ -1,6 +1,5 @@
 class Address < ActiveRecord::Base
   belongs_to :package
-  has_one :package
   before_validation :format_address
   validates :name, :street1, :city, :state, :zip, presence: true
   validates_inclusion_of :zip, :in => 10000..99999
